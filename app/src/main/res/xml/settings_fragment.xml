@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+        <Preference
+            android:key="keypref"
+            android:layout="@layout/preference_loading_placeholder"
+            />
+
+        <ListPreference
+            android:title="Change Language"
+            android:icon="@drawable/sharp_language_black_36"
+            android:key="@string/language_preference_key"
+            android:entries="@array/language_values"
+            android:entryValues="@array/language_labels"
+            android:defaultValue="@string/en"
+
+            />
+
+        <ListPreference
+            android:title="@string/sortBy_title"
+            android:icon="@drawable/sharp_sort_black_36"
+            android:key="@string/SortBy_preference_key"
+            android:entries="@array/SortyBy_labels"
+            android:entryValues="@array/SortyBy_Values"
+            android:defaultValue="@string/publishedAt"
+
+            />
+
+        <ListPreference
+            android:title="@string/date_title"
+            android:icon="@drawable/sharp_date_range_black_36"
+            android:key="@string/date_preference_key"
+            android:entries="@array/Date_labels"
+            android:entryValues="@array/Date_values"
+            android:defaultValue="@string/today"
+            />
+
+
+
+
+</PreferenceScreen>

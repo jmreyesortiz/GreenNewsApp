@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <array name="language_values">
+        <item>@string/arabic</item>
+        <item>@string/catalan</item>
+        <item>@string/chinese</item>
+        <item>@string/dutch</item>
+        <item>@string/english</item>
+        <item>@string/french</item>
+        <item>@string/german</item>
+        <item>@string/hebrew</item>
+        <item>@string/italian</item>
+        <item>@string/portuguese</item>
+        <item>@string/russian</item>
+        <item>@string/sami</item>
+        <item>@string/spanish</item>
+        <item>@string/ud</item>
+    </array>
+
+    <array name="language_labels">
+        <item>@string/ar</item>
+        <item>@string/no</item>
+        <item>@string/ch</item>
+        <item>@string/nl</item>
+        <item>@string/en</item>
+        <item>@string/fr</item>
+        <item>@string/ge</item>
+        <item>@string/he</item>
+        <item>@string/it</item>
+        <item>@string/pt</item>
+        <item>@string/ru</item>
+        <item>@string/se</item>
+        <item>@string/es</item>
+        <item>@string/ud</item>
+    </array>
+
+    <array name="SortyBy_Values">
+        <item>@string/publishedAt</item>
+        <item>@string/relevancy</item>
+        <item>@string/popularity</item>
+
+    </array>
+
+    <array name="SortyBy_labels">`
+        <item>@string/published_title</item>
+        <item>@string/relevancy_title</item>
+        <item>@string/popularity_title</item>
+    </array>
+    
+    <array name = "Date_labels">
+        <item>@string/today_title</item>
+        <item>@string/seven_title</item>
+        <item>@string/fourteen_title</item>
+        <item>@string/month_title</item>
+    </array>
+    
+    <array name="Date_values">
+        <item>@string/today</item>
+        <item>@string/seven</item>
+        <item>@string/fourteen</item>
+        <item>@string/thirty</item>
+
+    </array>
+
+
+
+</resources>
