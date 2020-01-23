@@ -1,15 +1,43 @@
 package com.juanma.greennews.models;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+//Model class for the Settings
 
 public class Settings {
 
+    private String language;
+    private String sortBy;
+    private int date;
 
-    public String language;
-    public String sortBy;
-    public int date;
+    private Settings() {
+        language = "en";
+        sortBy = "relevancy";
+        date = 1;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getSortBy() {
+        return sortBy;
+    }
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
 
     private static final Settings Instance = new Settings();
 
@@ -17,11 +45,7 @@ public class Settings {
         return Instance;
     }
 
-    private Settings() {
-        language = "en";
-        sortBy = "publishedAt";
-        date = 7;
-    }
+
 
 
 }

@@ -16,7 +16,6 @@
         <item>@string/russian</item>
         <item>@string/sami</item>
         <item>@string/spanish</item>
-        <item>@string/ud</item>
     </array>
 
     <array name="language_labels">
@@ -33,17 +32,15 @@
         <item>@string/ru</item>
         <item>@string/se</item>
         <item>@string/es</item>
-        <item>@string/ud</item>
     </array>
 
     <array name="SortyBy_Values">
         <item>@string/publishedAt</item>
         <item>@string/relevancy</item>
         <item>@string/popularity</item>
-
     </array>
 
-    <array name="SortyBy_labels">`
+    <array name="SortyBy_labels">
         <item>@string/published_title</item>
         <item>@string/relevancy_title</item>
         <item>@string/popularity_title</item>

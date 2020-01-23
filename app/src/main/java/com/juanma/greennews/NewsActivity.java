@@ -29,21 +29,21 @@ public class NewsActivity extends BaseActivity {
     public static String mLoadUrl;
     private String mTrackUrlChange;
     private String mTitle;
-    private AppBarLayout mAppBarLayout;
     private ProgressBar mProgressBar;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar_2);
         mProgressBar.setMax(100);
         mProgressBar.setProgress(1);
 
         String url  = getIntent().getStringExtra(mLoadUrl);
         if (url == null || url.isEmpty()) finish();
-
 
         // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar4);
@@ -54,6 +54,7 @@ public class NewsActivity extends BaseActivity {
         webView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         setWebView(webView,webSettings);
+
         //Anonymous class to obtain current url and title
         webView.setWebViewClient(new WebViewClient()
         {
@@ -63,8 +64,6 @@ public class NewsActivity extends BaseActivity {
                 mTrackUrlChange = url;
 
             }
-
-
 
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -76,8 +75,7 @@ public class NewsActivity extends BaseActivity {
         });
 
 
-
-
+        //Anonymous class for Progress Bar
         webView.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int progress) {
                 if(progress < 100 && mProgressBar.getVisibility() == ProgressBar.GONE) {
@@ -103,8 +101,7 @@ public class NewsActivity extends BaseActivity {
         return true;
     }
 
-    //Shares the title and opens in a new tab.
-
+    //Menu for sharing the application and also for opening into a new tab.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -138,13 +135,14 @@ public class NewsActivity extends BaseActivity {
     }
 
 
+    //Web View Settings
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static void setWebView(WebView webView, WebSettings webSettings){
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setSupportZoom(true);
-        webView.getSettings().setBuiltInZoomControls(true); // allow pinch to zooom
-        webView.getSettings().setDisplayZoomControls(false); // disable the default zoom controls on the page
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);

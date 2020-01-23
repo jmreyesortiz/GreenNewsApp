@@ -20,7 +20,6 @@ import com.juanma.greennews.adapters.NewsRecyclerAdapter;
 import com.juanma.greennews.adapters.OnNewsListener;
 import com.juanma.greennews.models.News;
 import com.juanma.greennews.models.Settings;
-import com.juanma.greennews.util.Testing;
 import com.juanma.greennews.util.VerticalSpacingItemDecorator;
 import com.juanma.greennews.viewmodels.NewsListViewModel;
 
@@ -39,7 +38,7 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
     private RecyclerView mRecyclerView;
     private NewsRecyclerAdapter mAdapter;
     private String language = "en";
-    private String sortBy = "publishedAt";
+    private String sortBy = "relevancy";
     private String currentDate;
     private String date;
 
@@ -71,13 +70,14 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
 
         //Adapter manager
         mAdapter = new NewsRecyclerAdapter(this);
+
         //Vertical Decorator
         VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(30);
         mRecyclerView.addItemDecoration(itemDecorator);
         mRecyclerView.setAdapter(mAdapter);
+
         //Layout Manager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         //Loading more pages and determination of what is on the bottom or not.
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -95,9 +95,8 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
 
 
     }
-
+//Initialize the search
     private void initSearchView(){
-
         final SearchView searchView = findViewById(R.id.search_view);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -135,7 +134,6 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
             public void onChanged(List<News> news) {
              if (news!= null){
                  mNewsListViewModel.setmIsPerformingQuery(false);
-                 Testing.printNews("test", news);
              }
                 mAdapter.setNews(news);
 
@@ -213,13 +211,13 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
     //getting language
 
     public String getLanguage(){
-        String language = Settings.getInstance().language;
+        String language = Settings.getInstance().getLanguage();
         return language;
     }
 
     //getting Sort By
     public String getSortBy(){
-        String sortBy = Settings.getInstance().sortBy;
+        String sortBy = Settings.getInstance().getSortBy();
         return sortBy;
     }
 
@@ -274,7 +272,7 @@ public class NewsListActivity extends BaseActivity implements OnNewsListener {
         language = getLanguage();
         sortBy = getSortBy();
         currentDate = checkDate(0);
-        date = checkDate(Settings.getInstance().date);
+        date = checkDate(Settings.getInstance().getDate());
         Log.d(TAG, " dateClick: " + date + " sortBy " + sortBy + " language " + language);
     }
 

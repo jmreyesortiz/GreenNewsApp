@@ -26,8 +26,6 @@ public interface NewsApi {
             @Query("page") String page,
             @Query("pageSize") String pageSize,
             @Query("language") String language,
-            //@Query("domains") String domains,
-            //@Query("excludeDomains") String excludeDomains,
             @Query("from") String from,
             @Query("to") String to
     );

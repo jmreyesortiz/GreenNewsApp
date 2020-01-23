@@ -5,7 +5,9 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Sources implements Parcelable
+//Model class for the Sources JSON query that contains some essential information
+
+public class Sources
 
 {
     private String id;
@@ -16,25 +18,11 @@ public class Sources implements Parcelable
         this.name = name;
     }
 
-    public Sources() {
-    }
-
     protected Sources(Parcel in) {
         id = in.readString();
         name = in.readString();
     }
 
-    public static final Creator<Sources> CREATOR = new Creator<Sources>() {
-        @Override
-        public Sources createFromParcel(Parcel in) {
-            return new Sources(in);
-        }
-
-        @Override
-        public Sources[] newArray(int size) {
-            return new Sources[size];
-        }
-    };
 
     public String getId() {
         return id;
@@ -44,16 +32,6 @@ public class Sources implements Parcelable
         return name;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(id);
-        parcel.writeString(name);
-    }
 
     @Override
     public String toString() {

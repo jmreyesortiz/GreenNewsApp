@@ -31,11 +31,8 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private static final int CATEGORY_TYPE = 3;
     private static final int EXHAUSTED_TYPE= 4;
 
-
     private List<News> mNews;
     private OnNewsListener mOnNewsListener;
-
-
 
     public NewsRecyclerAdapter(OnNewsListener onNewsListener) {
         this.mOnNewsListener = onNewsListener;
@@ -74,11 +71,30 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     }
 
+
+    @Override
+    public int getItemViewType(int position) {
+
+        if (mNews.get(position).getNewsTrigger() == -1) {
+            return CATEGORY_TYPE;
+        } else if (mNews.get(position).getTitle().equals("LOADING...")) {
+            return LOADING_TYPE;
+        } else if (mNews.get(position).getTitle().equals("EXHAUSTED...")) {
+            return EXHAUSTED_TYPE;
+        }
+        else if ((position == mNews.size() - 1) && position != 0 && !mNews.get(position).getTitle().equals("EXHAUSTED...")) {
+            return LOADING_TYPE;
+        } else {
+            return NEWS_TYPE;
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
 
             int itemViewType = getItemViewType(position);
+
             if(itemViewType == NEWS_TYPE){
                 RequestOptions options = new RequestOptions()
                         .centerCrop()
@@ -100,11 +116,9 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 String new_date = parseDate(date);
                 ((NewsViewHolder)viewHolder).date.setText(new_date);
 
-                //Todo:  Date will go here
-                //Todo: Change the Date to a proper date formate that is legible
             }
-            else if (itemViewType == CATEGORY_TYPE){
 
+            else if (itemViewType == CATEGORY_TYPE){
                 RequestOptions options = new RequestOptions()
                         .centerCrop()
                         .error(R.drawable.ic_launcher_background);
@@ -123,23 +137,8 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
 
-    @Override
-    public int getItemViewType(int position) {
 
-        if (mNews.get(position).getSocialRank() == -1) {
-            return CATEGORY_TYPE;
-        } else if (mNews.get(position).getTitle().equals("LOADING...")) {
-            return LOADING_TYPE;
-        } else if (mNews.get(position).getTitle().equals("EXHAUSTED...")) {
-            return EXHAUSTED_TYPE;
-        }
-        //todo: there might be something here!!!!
-        else if ((position == mNews.size() - 1) && position != 0 && !mNews.get(position).getTitle().equals("EXHAUSTED...")) {
-            return LOADING_TYPE;
-        } else {
-            return NEWS_TYPE;
-        }
-    }
+        /// Methods
 
     public void setQueryExhausted(){
         hideLoading();;
@@ -176,12 +175,11 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void displaySearchCategories(){
         List<News> categories = new ArrayList<>();
-
         for(int i =0; i< Constants.DEFAULT_SEARCH_CATEGORIES.length; i++){
             News news = new News();
             news.setTitle(Constants.DEFAULT_SEARCH_CATEGORIES[i]);
             news.setUrlToImage(Constants.DEFAULT_SEARCH_CATEGORY_IMAGES[i]);
-            news.setSocialRank(-1);
+            news.setNewsTrigger(-1);
             categories.add(news);
         }
         mNews = categories;
@@ -190,7 +188,6 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private boolean isLoading(){
-
         if(mNews!=null){
             if(mNews.size() > 0){
                 if(mNews.get(mNews.size() -1).getTitle().equals("LOADING...")){

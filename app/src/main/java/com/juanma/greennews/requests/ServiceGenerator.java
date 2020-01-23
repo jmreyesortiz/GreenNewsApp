@@ -12,9 +12,9 @@ public class ServiceGenerator {
             addConverterFactory(GsonConverterFactory.create());
 
     private static Retrofit retrofit = retrofitBuilder.build();
-    private static NewsApi newsApi = retrofit.create(NewsApi.class);    //Retrofit Instance instantiates the Articles API instance
+    private static NewsApi newsApi = retrofit.create(NewsApi.class);
 
-    // Returns the instantiation of the Articles API
+    // Returns the instantiation of the news API
     public static NewsApi getNewsApi(){
         return newsApi;
     }

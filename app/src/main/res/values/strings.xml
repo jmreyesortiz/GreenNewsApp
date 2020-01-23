@@ -7,17 +7,17 @@
     <string name="PageSize_title">Page_size</string>
     <string name="date_title">Date</string>
 
-    <string name="language_preference_key">en</string>
-    <string name="SortBy_preference_key">SortBy</string>
-    <string name="PageSize_preference_key">PageSize</string>
-    <string name="date_preference_key">date</string>
+    <string name="language_preference_key">LanguageKey</string>
+    <string name="SortBy_preference_key">SortByKey</string>
+    <string name="PageSize_preference_key">PageSizeKey</string>
+    <string name="Date_preference_key">DateKey</string>
 
-    <string name="relevancy">relevancy</string>
     <string name="popularity">popularity</string>
+    <string name="relevancy">relevancy</string>
     <string name="publishedAt">publishedAt</string>
 
-    <string name="relevancy_title">By relevancy</string>
-    <string name="popularity_title">By popularity</string>
+    <string name="popularity_title">By Popularity</string>
+    <string name="relevancy_title">By Relevancy</string>
     <string name="published_title">By Newest</string>
 
     <string name="today_title">Today</string>

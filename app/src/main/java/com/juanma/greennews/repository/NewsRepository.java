@@ -64,7 +64,6 @@ public class NewsRepository {
             if(list.size() % 20 != 0){
                 mIsTheQueryExhausted.setValue(true);
             }
-
         }
         else
         {
@@ -77,12 +76,10 @@ public class NewsRepository {
         return mIsTheQueryExhausted;
     }
 
-    //Todo: change this first
     public void searchNewsApi(String query, String sorted, int pageNumber, int pageSize, String language, String from, String to){
         if (pageNumber == 0){
             pageNumber = 1;
         }
-
         mQuery = query;
         mSorted = sorted;
         mPageNumber = pageNumber;
@@ -91,13 +88,10 @@ public class NewsRepository {
         mFrom = from;
         mTo = to;
         mIsTheQueryExhausted.setValue(false);
-
-
-
         mNewsApiClient.searchRecipesApi(query, sorted, pageNumber, pageSize, language, from, to);
     }
 
-    //Todo: change this second
+
     public void searchNextPage(){
         searchNewsApi(mQuery, mSorted,mPageNumber + 1,mPageSize,mLanguage,mFrom,mTo);
     }

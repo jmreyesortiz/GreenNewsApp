@@ -1,14 +1,14 @@
 package com.juanma.greennews.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class News implements Parcelable {
+//Model class for news.
 
-    private int SocialRank;
+public class News{
+
+
+    private int newsTrigger;
 
     @SerializedName("source")
     @Expose()
@@ -31,12 +31,6 @@ public class News implements Parcelable {
                 ", urlToImage='" + urlToImage + '\'' +
                 ", publishedAt='" + publishedAt + '\'' +
                 '}';
-    }
-
-
-
-
-    public News() {
     }
 
     public void setTitle(String title) {
@@ -71,54 +65,12 @@ public class News implements Parcelable {
         return publishedAt;
     }
 
-    public static Creator<News> getCREATOR() {
-        return CREATOR;
+    public int getNewsTrigger() {
+        return newsTrigger;
     }
 
-    protected News(Parcel in) {
-        source = in.readParcelable(Sources.class.getClassLoader());
-        author = in.readString();
-        title = in.readString();
-        description = in.readString();
-        url = in.readString();
-        urlToImage = in.readString();
-        publishedAt = in.readString();
-    }
-
-    public static final Creator<News> CREATOR = new Creator<News>() {
-        @Override
-        public News createFromParcel(Parcel in) {
-            return new News(in);
-        }
-
-        @Override
-        public News[] newArray(int size) {
-            return new News[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(source, i);
-        parcel.writeString(author);
-        parcel.writeString(title);
-        parcel.writeString(description);
-        parcel.writeString(url);
-        parcel.writeString(urlToImage);
-        parcel.writeString(publishedAt);
-    }
-
-    public int getSocialRank() {
-        return SocialRank;
-    }
-
-    public void setSocialRank(int socialRank) {
-        SocialRank = socialRank;
+    public void setNewsTrigger(int newsTrigger) {
+        this.newsTrigger = newsTrigger;
     }
 
     public void setSource(Sources source) {

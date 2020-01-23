@@ -27,7 +27,6 @@ public class NewsApiClient {
     private static final String TAG = "NewsApiClient";
     private RetrieveNewsRunnable mRetrieveNewsRunnable;
 
-
     public static NewsApiClient getInstance(){
         if (instance == null){
             instance = new NewsApiClient();
@@ -35,8 +34,9 @@ public class NewsApiClient {
         return instance;
     }
 
+    // Live-Data instantiation
     private NewsApiClient(){
-        mNews = new MutableLiveData<>(); // Live-Data instanciation
+        mNews = new MutableLiveData<>();
 
     }
 
@@ -54,8 +54,6 @@ public class NewsApiClient {
         mRetrieveNewsRunnable = new RetrieveNewsRunnable(query,sorted,pageNumber, pageSize, language, from, to);
         // handler gets the Runnable
         final Future handler = AppExecutors.getInstance().getNetworkIO().submit(mRetrieveNewsRunnable);
-
-
         //Setting a network-time-out
         AppExecutors.getInstance().getNetworkIO().schedule(new Runnable() {
             @Override
@@ -63,7 +61,6 @@ public class NewsApiClient {
 
                 // Let the user know its timed out.
                 handler.cancel(true);
-
             }
         }
         ,Constants.NETWORK_TIMEOUT
@@ -96,7 +93,7 @@ public class NewsApiClient {
         @Override
         public void run() {
 
-            //Excecuted on the background thread, asking information from the REST API
+            //Executed on the background thread, asking information from the REST API
             try {
                 Response response = getNews(query,sorted,pageNumber,language,from,to).execute();  //Gets the LiveData into the Response RetroFit Object
                 if(cancelRequest){
@@ -107,7 +104,7 @@ public class NewsApiClient {
                     List<News> list = new ArrayList<>(((NewsResponse)response.body()).getNews()); // ???
 
                     if (pageNumber == 1){
-                        mNews.postValue(list);  // If everything goes right, post the value to the live data.
+                        mNews.postValue(list);  //Post the value to the live data.
                     }
                     else{
                         List<News> currentNews = mNews.getValue();          //Gets the value from the Live Data
@@ -147,8 +144,6 @@ public class NewsApiClient {
             );
 
         }
-
-
 
 
         private void cancelRequest(){
