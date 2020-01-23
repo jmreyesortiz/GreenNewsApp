@@ -1,3 +1,10 @@
 # GreenNewsApp
 
-Hi welcome to GreennewsApp. I built this application to build an easy way to find news about any topic you want, using the NEWS API, but more so to find news about the earth.
+Hi, welcome to GreennewsApp. I built this application to provide a great way to find news about important topics about the earth, and if you wish, about any topic you want. 
+
+Libraries / Technologies Used
+
+Glide
+NewsApi
+CircleImageView
+RetroFit
