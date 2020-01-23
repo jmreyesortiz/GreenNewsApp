@@ -127,11 +127,11 @@ public class NewsApiClient {
 
         }
 
-        //todo:change this too.
+
         private Call <NewsResponse> getNews(String query, String sorted, int pageNumber, String language,
         String from, String to){
 
-            //todo:change this too
+
             return ServiceGenerator.getNewsApi().searchArticle(
                     query,
                     sorted,
