@@ -44,3 +44,5 @@ MVVM structural design pattern using LiveData observables and ViewModel.
 **Installation**
 1. Clone or Download the Repo
 2. Go to newsapi.org, sign up and obtain an APIKEY
+3. Go to `app/src/main/java/com.juanma.greennews/util/Constants.Java` and change the variable `public static final String API_KEY = "YOUR API KEY"; ` to your obtained api key.
+4. After this, you'll be able to run the app.
