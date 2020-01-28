@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NewsActivity"
+    >
+
+    <item
+        android:id="@+id/share_news"
+        android:orderInCategory="300"
+        android:title="Share"
+        android:icon="@drawable/baseline_share_black_36"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/open_in_browser"
+        android:orderInCategory="300"
+        android:title="Browser"
+        android:icon="@drawable/baseline_open_in_browser_black_36"
+        app:showAsAction="ifRoom"/>
+
+</menu>
+

@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">GreenNews</string>
+
+
+    <string name="language_title">Language</string>
+    <string name="sortBy_title">Sort By</string>
+    <string name="PageSize_title">Page_size</string>
+    <string name="date_title">Date</string>
+
+    <string name="language_preference_key">LanguageKey</string>
+    <string name="SortBy_preference_key">SortByKey</string>
+    <string name="PageSize_preference_key">PageSizeKey</string>
+    <string name="Date_preference_key">DateKey</string>
+
+    <string name="popularity">popularity</string>
+    <string name="relevancy">relevancy</string>
+    <string name="publishedAt">publishedAt</string>
+
+    <string name="popularity_title">By Popularity</string>
+    <string name="relevancy_title">By Relevancy</string>
+    <string name="published_title">By Newest</string>
+
+    <string name="today_title">Today</string>
+    <string name="seven_title">7 days</string>
+    <string name="fourteen_title">14 days</string>
+    <string name="month_title">20 Days</string>
+
+
+    <string name="today">1</string>
+    <string name="seven">7</string>
+    <string name="fourteen">14</string>
+    <string name="thirty">20</string>
+
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="german">German</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="hebrew">Hebrew</string>
+    <string name="italian">Italian</string>
+    <string name="dutch">Dutch</string>
+    <string name="catalan">Catalan</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="russian">Russian</string>
+    <string name="sami">Sami</string>
+    <string name="chinese">Chinese</string>
+    <string name="udd">Ud</string>
+
+
+
+    <string name="en">en</string>
+    <string name="ar">ar</string>
+    <string name="ge">de</string>
+    <string name="es">es</string>
+    <string name="fr">fr</string>
+    <string name="he">he</string>
+    <string name="it">it</string>
+    <string name="nl">nl</string>
+    <string name="no">no</string>
+    <string name="pt">pt</string>
+    <string name="ru">ru</string>
+    <string name="se">se</string>
+    <string name="ch">ch</string>
+    <string name="ud">ud</string>
+
+
+
+    <string name="business">business</string>
+    <string name="entertainment">entertainment</string>
+    <string name="general">general</string>
+    <string name="health">health</string>
+    <string name="science">science</string>
+    <string name="sports">sports</string>
+    <string name="technology">technology</string>
+
+
+
+
+
+</resources>
