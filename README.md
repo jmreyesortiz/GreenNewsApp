@@ -17,14 +17,15 @@
 
 **App Architecture**
 
-MVVM structural design pattern using LiveData observables and ViewModel
+MVVM structural design pattern using LiveData observables and ViewModel.
 
 **Features**
 - Search news about various important topics about the earth.
 - Using the search bar, find news about any topic.
 - Sort search by Newest, relevannce, or popularity.
 - Search news based on date.
-- Select search based on your language.
+- Search news of your language.
+- Browse the news with WebView, with the option to share or open in another browser.
 
 **Screenshots**
 <p float="left">
@@ -36,5 +37,5 @@ MVVM structural design pattern using LiveData observables and ViewModel
 
 </p>
 
-**Instalation**
+**Installation**
 >
