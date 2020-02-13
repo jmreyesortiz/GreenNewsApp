@@ -25,12 +25,10 @@
 MVVM structural design pattern using LiveData observables and ViewModel.
 
 **Features**
-- Search news about various important topics about the earth.
-- Using the search bar, find news about any topic.
-- Sort search by Newest, relevannce, or popularity.
-- Search news based on date.
-- Search news of your language.
-- Browse the news with WebView, with the option to share or open in another browser.
+- Cutomized news search.
+- Default news search queries.
+- Sort your search preferences, by date or popularity.
+- Browse the selected news with WebView, with the option to share or open in another browser.
 
 **Screenshots**
 <p float="left">
